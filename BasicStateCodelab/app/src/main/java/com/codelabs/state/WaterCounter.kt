@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun StatefulCounter(modifier: Modifier = Modifier) {
     var count by rememberSaveable { mutableStateOf(0) }
-    StatelessCounter(
+    WaterCounter(
         count = count,
         onIncrement = { count++ },
         modifier = modifier
@@ -38,7 +38,7 @@ fun StatefulCounter(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun StatelessCounter(count: Int, onIncrement: () -> Unit, modifier: Modifier = Modifier) {
+fun WaterCounter(count: Int, onIncrement: () -> Unit, modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(16.dp)) {
         if (count > 0) {
             Text("You've had $count glasses.")
